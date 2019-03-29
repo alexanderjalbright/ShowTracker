@@ -21,7 +21,7 @@ namespace ShowTracker.Tests
         {
             var undertest = new Show() { Description = "Restaurant cartoon" };
 
-            var result = undertest.Name;
+            var result = undertest.Description;
 
             Assert.Equal("Restaurant cartoon", result);
         }
@@ -31,9 +31,9 @@ namespace ShowTracker.Tests
         {
             var undertest = new Show() { Seasons = 5 };
 
-            var result = undertest.Name;
+            var result = undertest.Seasons;
 
-            Assert.Equal("Restaurant cartoon", result);
+            Assert.Equal(5, result);
         }
     }
 }
