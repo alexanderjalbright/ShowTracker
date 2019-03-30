@@ -10,7 +10,7 @@ namespace ShowTracker
     public class ShowContext : DbContext
     {
         public DbSet<Show> Shows { get; set; }
-        //public DbSet<Genre> Genres { get; set; }
+        public DbSet<Genre> Genres { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
