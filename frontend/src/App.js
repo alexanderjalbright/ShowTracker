@@ -20,7 +20,11 @@ class App extends Component {
     const genreList = this.state.genres.map(genre => (
       <Genre key={genre.genreId} genre={genre} />
     ));
-    return <ul>{genreList}</ul>;
+    return (
+      <div className="app">
+        <ul className="genre-list">{genreList}</ul>
+      </div>
+    );
   }
 }
 
