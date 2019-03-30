@@ -19,6 +19,7 @@ export default class Show extends Component {
         console.error(err);
       });
   };
+
   render() {
     const { show } = this.props;
     return (

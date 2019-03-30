@@ -18,6 +18,7 @@ class App extends Component {
       .then(res => res.json())
       .then(json => this.setState({ genres: json }));
   }
+
   submit = submittedGenreId => {
     const newShow = {
       name: this.state.name,
@@ -43,15 +44,19 @@ class App extends Component {
       }
     });
   };
+
   setName = text => {
     this.setState({ name: text });
   };
+
   setDescription = text => {
     this.setState({ description: text });
   };
+
   setSeasons = number => {
     this.setState({ seasons: number });
   };
+
   render() {
     const genreList = this.state.genres.map(genre => (
       <Genre

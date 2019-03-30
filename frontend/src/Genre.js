@@ -8,6 +8,7 @@ export default class Genre extends Component {
     const form = document.querySelector(`.form${this.props.genre.genreId}`);
     form.style.display = "block";
   };
+
   cancel = () => {
     const add = document.querySelector(`.add${this.props.genre.genreId}`);
     add.style.display = "block";
@@ -17,19 +18,24 @@ export default class Genre extends Component {
     this.props.setDescription("");
     this.props.setSeasons(0);
   };
+
   submitClick = () => {
     this.props.submit(this.props.genre.genreId);
     this.cancel();
   };
+
   nameChange = event => {
     this.props.setName(event.target.value);
   };
+
   descriptionChange = event => {
     this.props.setDescription(event.target.value);
   };
+
   seasonsChange = event => {
     this.props.setSeasons(event.target.value);
   };
+
   render() {
     const { genre, name, description, seasons } = this.props;
     const showList = genre.shows.map(show => (
@@ -60,7 +66,7 @@ export default class Genre extends Component {
               value={seasons}
               onChange={this.seasonsChange}
             />
-          </div>{" "}
+          </div>
           <div>
             <button onClick={this.submitClick}>Submit</button>
             <button onClick={this.cancel}>Cancel</button>

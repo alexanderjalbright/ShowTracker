@@ -14,7 +14,6 @@ namespace ShowTracker.Tests
     {
         ShowController underTest;
         IShowRepository repo;
-
         public ShowControllerTests()
         {
             repo = Substitute.For<IShowRepository>();
