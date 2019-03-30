@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ShowTracker.Repositories;
 
 namespace ShowTracker
 {
@@ -33,6 +34,9 @@ namespace ShowTracker
             }));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<ShowContext>();
+            services.AddScoped<IShowRepository, ShowRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

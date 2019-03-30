@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShowTracker.Models;
+using ShowTracker.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,41 @@ namespace ShowTracker.Controllers
     [ApiController]
     public class ShowController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<IEnumerable<Show>> Get()
+        IShowRepository repo; 
+        public ShowController(IShowRepository repo)
         {
-            var showList = new List<Show>()
-            { new Show(), new Show() };
+            this.repo = repo;
+        }
 
-            return showList;
+        [HttpGet("{id}")]
+        public ActionResult<Show> Get(int id)
+        {
+            var show = repo.GetById(id);
+
+            return show;
+        }
+
+        [HttpPost]
+        public ActionResult<bool> Post([FromBody] Show newShow)
+        {
+            repo.Create(newShow);
+            return true;
+        }
+
+        [HttpPost("{id}")]
+        public ActionResult<bool> Post(int id, [FromBody] Show show)
+        {
+            repo.Update(show);
+            return true;
+        }
+
+        [HttpPost("{id}")]
+        public ActionResult<bool> Post(int id)
+        {
+            var show = repo.GetById(id);
+            repo.Delete(show);
+
+            return true;
         }
     }
 }
