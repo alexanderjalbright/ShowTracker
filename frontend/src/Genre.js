@@ -9,8 +9,8 @@ export default class Genre extends Component {
     ));
     return (
       <li key={genre.genreId} className="genre">
-        <h1>Genre: {genre.name}</h1>
-        <p>Description: {genre.description}</p>
+        <h1>{genre.name}</h1>
+        <p>{genre.description}</p>
         <ul>{showList}</ul>
       </li>
     );

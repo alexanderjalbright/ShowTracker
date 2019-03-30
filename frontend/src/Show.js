@@ -5,9 +5,9 @@ export default class Show extends Component {
     const { show } = this.props;
     return (
       <li key={show.showId} className="show">
-        <h2>Show: {show.name}</h2>
-        <p>Description: {show.description}</p>
-        <p>Seasons: {show.seasons}</p>
+        <h2>{show.name}</h2>
+        <small>({show.seasons} Seasons)</small>
+        <p>{show.description}</p>
       </li>
     );
   }
