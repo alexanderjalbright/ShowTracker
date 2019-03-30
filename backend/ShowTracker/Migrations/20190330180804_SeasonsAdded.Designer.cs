@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShowTracker;
 
 namespace ShowTracker.Migrations
 {
     [DbContext(typeof(ShowContext))]
-    partial class ShowContextModelSnapshot : ModelSnapshot
+    [Migration("20190330180804_SeasonsAdded")]
+    partial class SeasonsAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
