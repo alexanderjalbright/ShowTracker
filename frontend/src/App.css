@@ -38,6 +38,10 @@
   border-bottom: 3px solid var(--dark-color);
 }
 
+.form {
+  display: none;
+}
+
 .show {
   margin-bottom: 20px;
 }

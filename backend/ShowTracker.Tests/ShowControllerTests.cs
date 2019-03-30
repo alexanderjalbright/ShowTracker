@@ -42,7 +42,7 @@ namespace ShowTracker.Tests
         }
 
         [Fact]
-        public void Post_Deletes_Show()
+        public void Post_Updates_Show()
         {
             var result = underTest.Post(1, new Show());
 
@@ -50,9 +50,9 @@ namespace ShowTracker.Tests
         }
 
         [Fact]
-        public void Post_Updates_Show()
+        public void Post_Deletes_Show()
         {
-            var result = underTest.Post(1);
+            var result = underTest.Delete(1);
 
             Assert.True(result.Value);
         }

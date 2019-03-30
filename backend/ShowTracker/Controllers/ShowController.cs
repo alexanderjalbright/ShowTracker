@@ -40,8 +40,8 @@ namespace ShowTracker.Controllers
             return true;
         }
 
-        [HttpPost("{id}")]
-        public ActionResult<bool> Post(int id)
+        [HttpDelete("{id}")]
+        public ActionResult<bool> Delete(int id)
         {
             var show = repo.GetById(id);
             repo.Delete(show);
