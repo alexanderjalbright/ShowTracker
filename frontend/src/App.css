@@ -10,9 +10,6 @@
   list-style: none;
 }
 
-.app {
-}
-
 .genre-list {
   padding: 1em 2em;
   display: flex;
@@ -38,6 +35,14 @@
   border-bottom: 3px solid var(--dark-color);
 }
 
+.form {
+  display: none;
+}
+
+.add {
+  margin: 0 auto;
+}
+
 .show {
   margin-bottom: 20px;
 }
@@ -59,4 +64,8 @@
   display: flex;
   padding-left: 10px;
   font-style: italic;
+}
+
+.update {
+  display: none;
 }

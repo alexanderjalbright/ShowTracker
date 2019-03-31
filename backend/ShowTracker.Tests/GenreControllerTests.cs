@@ -25,7 +25,6 @@ namespace ShowTracker.Tests
         public void Get_Returns_All_Genres()
         {
             var testList = new List<Genre>() { new Genre(), new Genre() };
-
             repo.GetAll().Returns(testList);
 
             var result = underTest.Get();

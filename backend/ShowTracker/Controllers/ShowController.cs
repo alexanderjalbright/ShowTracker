@@ -30,6 +30,7 @@ namespace ShowTracker.Controllers
         public ActionResult<bool> Post([FromBody] Show newShow)
         {
             repo.Create(newShow);
+
             return true;
         }
 
@@ -37,11 +38,12 @@ namespace ShowTracker.Controllers
         public ActionResult<bool> Post(int id, [FromBody] Show show)
         {
             repo.Update(show);
+
             return true;
         }
 
-        [HttpPost("{id}")]
-        public ActionResult<bool> Post(int id)
+        [HttpDelete("{id}")]
+        public ActionResult<bool> Delete(int id)
         {
             var show = repo.GetById(id);
             repo.Delete(show);
