@@ -20,7 +20,7 @@ export default class Genre extends Component {
   };
 
   submitClick = () => {
-    this.props.submit(this.props.genre.genreId);
+    this.props.submitGenre(this.props.genre.genreId);
     this.cancel();
   };
 
@@ -39,7 +39,21 @@ export default class Genre extends Component {
   render() {
     const { genre, name, description, seasons } = this.props;
     const showList = genre.shows.map(show => (
-      <Show key={show.showId} className="show" show={show} />
+      <Show
+        key={show.showId}
+        className="show"
+        show={show}
+        name={this.props.name}
+        description={this.props.description}
+        seasons={this.props.seasons}
+        setName={this.props.setName}
+        setDescription={this.props.setDescription}
+        setSeasons={this.props.setSeasons}
+        nameChange={this.nameChange}
+        descriptionChange={this.descriptionChange}
+        seasonsChange={this.seasonsChange}
+        submitShow={this.props.submitShow}
+      />
     ));
     return (
       <li key={genre.genreId} className="genre">
